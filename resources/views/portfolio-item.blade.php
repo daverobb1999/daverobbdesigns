@@ -42,7 +42,9 @@
             <div class="col-lg-12">
                 <h1 class="page-header">{{ $project['name'] }}
 
-					<small><a href=>{{ $project['url'] }}</a>{{ $project['url'] }}</small>
+
+
+                    <small>{{ Html::link($project['url']) }}</small>
                 </h1>
             </div>
         </div>
@@ -58,7 +60,7 @@
             <div class="col-md-4">
                 <h3>Project Description</h3>
 
-                <p></p>
+                <p>{{$project['description']}}</p>
                 <h3>Project Technical Details</h3>
 
                 <ul>
@@ -69,11 +71,11 @@
         </div>
                 <!-- /.row -->
 
-        <!-- Related Projects Row -->
+        <!-- Screen Shots -->
         <div class="row">
 
             <div class="col-lg-12">
-                <h3 class="page-header">Related Projects</h3>
+                <h3 class="page-header">Other Screen Shots</h3>
             </div>
 
             <div class="col-sm-3 col-xs-6">
