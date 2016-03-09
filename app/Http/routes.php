@@ -1,5 +1,7 @@
 <?php
 
+use App\Projects;
+
 /*
 |--------------------------------------------------------------------------
 | Routes File
@@ -27,6 +29,22 @@ Route::get('/resume', function () {
     return view('contact');
 });*/
 
+/*Route::get('/home/project/{id}', function ($id) {
+    return Projects::findOrFail($id);
+});*/
+
+//Route::get('/home/project/{id}', ['uses' =>'PortfolioController@show']);
+
+Route::get('/home/project/{id}', function($id)
+{
+    //$project = Projects::where('id', '=', $id);
+    $project = Projects::findOrFail($id);
+    return view('portfolio-item')
+        ->with('project', $project);
+
+});
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -49,12 +67,13 @@ Route::group(['middleware' => ['web']], function () {
 });
 
 
-
+/*
 // link to project
 Route::get('project/{project_name}', function($project_name)
 {
     /*$project = Post::where('project_name', '=', $project_name);
     return view('portfolio-item')
-        ->with('project_name',$project_name);*/
+        ->with('project_name',$project_name);
     return view('portfolio-item');
-});
+
+});*/

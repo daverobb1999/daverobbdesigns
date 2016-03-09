@@ -35,16 +35,13 @@
 
     <!-- Page Content -->
     <div class="container">
-
-        <!-- Portfolio Item Heading -->
+        @foreach($project as $item)
+                <!-- Portfolio Item Heading -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">{{Request::segment(2)}}
-					<?php	$name = Request::segment(2);
-							$project = DB::table('project')->where('name', $name)->first();
-							$url = $project->url;
-						?>
-					<small><a href={{$url}}>{{$url}}</a></small>
+                <h1 class="page-header">{{ $item['name'] }}
+
+					<small><a href=></a></small>
                 </h1>
             </div>
         </div>
@@ -59,32 +56,18 @@
 
             <div class="col-md-4">
                 <h3>Project Description</h3>
-				<?php	$name = Request::segment(2);
-						$project = DB::table('project')->where('name', $name)->first();
-						$description = $project->description;
-					?>
-                <p>{{ $description }}</p>
+
+                <p></p>
                 <h3>Project Technical Details</h3>
-				<?php
-						$tags = DB::table('project_tags')
-						  ->join('project', 'project.id', '=', 'project_tags.projectID')
-						  ->join('tags', 'tags.ID', '=', 'project_tags.tagID')
-						  ->select('tags.name')
-						  ->get();
-					?>
+
                 <ul>
-						<?php
-						//print_r($tags);
-						foreach($tags as $tag){
-							echo "<li>".$tag->name."</li>";
-						}
-						
-						?>
+
                 </ul>
             </div>
 
         </div>
-        <!-- /.row -->
+        @endforeach
+                <!-- /.row -->
 
         <!-- Related Projects Row -->
         <div class="row">
