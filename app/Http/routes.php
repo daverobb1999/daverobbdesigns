@@ -13,18 +13,21 @@ use App\Projects;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('home');
 });
 
 Route::get('/home', function () {
     return view('home');
-});
+});*/
 
 Route::get('/resume', function () {
     return view('resume');
 });
 
+Route::get('/', 'PortfolioController@index');
+
+Route::get('/home/', 'PortfolioController@index');
 
 Route::get('/home/project/{id}', 'PortfolioController@show');
 

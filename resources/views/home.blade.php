@@ -12,28 +12,24 @@
 
     <div id="main" class="row">
 	        <!-- /.row -->
-			<?php
-			$projects = DB::table('project')->orderBy('id')->get();
-
-			foreach ($projects as $project)
-			{
-		     echo '  <div class="row">
+        @foreach($project as $item)
+		<div class="row">
 		            <div class="col-md-7">
-		                <a href="'. url('/project/'.$project->name) .'">
-		                    <img class="img-responsive border" src="http://localhost/daverobbdesigns/public/images/'. $project->url_to_image .'" alt="">
+		                <a href="">
+		                    <img class="img-responsive border" src=http://localhost/drd_2/public/images/{{$item['url_to_image']}} alt="">
 		                </a>
 		            </div>
 		            <div class="col-md-5">
-		                <h3>'. $project->name .'</h3>
-		                <p>'. $project->short_description .'</p>
-		                <a class="btn btn-primary" href="'. url('/project/'.$project->name) .'">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+		                <h3></h3>
+		                <p></p>
+		                <a class="btn btn-primary" href="">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
 		            </div>
 		        </div>
 		        <!-- /.row -->
 
-		        <hr>';
-			}
-			?>
+		        <hr>
+
+        @endforeach
 
       
 

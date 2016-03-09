@@ -14,9 +14,11 @@ class PortfolioController extends Controller {
      */
     public function index()
     {
-        $projects = Projects::all();
+        $project = Projects::all();
 
-        return view('Projects.index', ['projects' => $projects]);
+        return view('home')
+            ->with('project', $project);
+
     }
 
 
