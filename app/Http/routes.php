@@ -25,24 +25,8 @@ Route::get('/resume', function () {
     return view('resume');
 });
 
-/*Route::get('/contact', function () {
-    return view('contact');
-});*/
 
-/*Route::get('/home/project/{id}', function ($id) {
-    return Projects::findOrFail($id);
-});*/
-
-//Route::get('/home/project/{id}', ['uses' =>'PortfolioController@show']);
-
-Route::get('/home/project/{id}', function($id)
-{
-    //$project = Projects::where('id', '=', $id);
-    $project = Projects::findOrFail($id);
-    return view('portfolio-item')
-        ->with('project', $project);
-
-});
+Route::get('/home/project/{id}', 'PortfolioController@show');
 
 
 

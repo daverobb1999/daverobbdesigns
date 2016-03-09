@@ -29,10 +29,10 @@ class PortfolioController extends Controller {
      */
     public function show($id)
     {
-        // get the nerd
-        $projects = Projects::show($id);
+        $project = Projects::findOrFail($id);
 
-        return view('Projects.show', ['projects' => $projects]);
+        return view('portfolio-item')
+            ->with('project', $project);
     }
 
 
