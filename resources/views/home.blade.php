@@ -20,9 +20,9 @@
 		                </a>
 		            </div>
 		            <div class="col-md-5">
-		                <h3></h3>
-		                <p></p>
-		                <a class="btn btn-primary" href="">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+		                <h3>{{$item['name']}}</h3>
+		                <p>{{$item['short_description']}}</p>
+		                <a class="btn btn-primary" href=http://localhost/drd_2/public/project/{{$item['id']}}>View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
 		            </div>
 		        </div>
 		        <!-- /.row -->

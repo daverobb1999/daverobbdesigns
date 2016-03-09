@@ -29,7 +29,7 @@ Route::get('/', 'PortfolioController@index');
 
 Route::get('/home/', 'PortfolioController@index');
 
-Route::get('/home/project/{id}', 'PortfolioController@show');
+Route::get('/project/{id}', 'PortfolioController@show');
 
 
 

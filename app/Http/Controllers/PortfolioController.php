@@ -33,8 +33,18 @@ class PortfolioController extends Controller {
     {
         $project = Projects::findOrFail($id);
 
+        $tags = \DB::table('project_tags')
+            ->join('project', 'project.id', '=', 'project_tags.projectID')
+            ->join('tags', 'tags.ID', '=', 'project_tags.tagID')
+            ->select('tags.name')
+            ->get();
+
+
         return view('portfolio-item')
-            ->with('project', $project);
+            ->with('project', $project)
+            ->with('tags',$tags);
+
+
     }
 
 
