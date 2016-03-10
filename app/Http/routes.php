@@ -2,24 +2,6 @@
 
 use App\Projects;
 
-/*
-|--------------------------------------------------------------------------
-| Routes File
-|--------------------------------------------------------------------------
-|
-| Here is where you will register all of the routes in an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
-
-/*Route::get('/', function () {
-    return view('home');
-});
-
-Route::get('/home', function () {
-    return view('home');
-});*/
 
 Route::get('/resume', function () {
     return view('resume');
@@ -44,23 +26,19 @@ Route::get('/project/{id}', 'PortfolioController@show');
 |
 */
 
+
 Route::group(['middleware' => ['web']], function () {
-    //Contact Page
     Route::get('contact', 'ContactController@getContact');
-
-    //Form request:: POST action will trigger to controller
-    Route::post('contact_request','ContactController@getContactUsForm');
-
+    Route::post('contact_request', 'ContactController@getContactUsForm');
 });
 
+// Admin area
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
 
-/*
-// link to project
-Route::get('project/{project_name}', function($project_name)
-{
-    /*$project = Post::where('project_name', '=', $project_name);
-    return view('portfolio-item')
-        ->with('project_name',$project_name);
-    return view('portfolio-item');
-
-});*/
+    Route::get('/home', 'HomeController@index');
+});
