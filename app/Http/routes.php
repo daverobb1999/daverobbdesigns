@@ -13,7 +13,7 @@ Route::get('/home/', 'PortfolioController@index');
 
 Route::get('/project/{id}', 'PortfolioController@show');
 
-
+Route::resource('project', 'HomeController');
 
 /*
 |--------------------------------------------------------------------------
@@ -41,4 +41,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/dashboard', 'HomeController@index');
+
+    Route::get('/create-project', 'HomeController@create');
+
+    Route::get('/edit-project/{id}', 'HomeController@edit');
 });
