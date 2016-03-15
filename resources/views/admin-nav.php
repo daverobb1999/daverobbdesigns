@@ -15,7 +15,7 @@
                     <a href="http://localhost/drd_2/public/dashboard">Show All</a>
                 </li>
                 <li>
-                    <a href="{{ url('/create-project') }}">Add New</a>
+                    <a href="http://localhost/drd_2/public/dashboard/create">Add New</a>
                 </li>
             </ul>
         </div>

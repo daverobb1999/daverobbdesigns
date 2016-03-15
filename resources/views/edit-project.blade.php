@@ -12,14 +12,14 @@
 
     <div id="main" class="row">
 
-        <form role="form">
+        <div role="form">
 
 <h1>Edit {{ $project->name }}</h1>
 
 <!-- if there are creation errors, they will show here -->
 {{ Html::ul($errors->all()) }}
 
-            {{ Form::model($project, array('route' => array('project.update', $project->id), 'method' => 'PUT')) }}
+            {{ Form::model($project, array('action' => array('ProjectController@update', $project->id), 'method' => 'PUT')) }}
 
 <div class="form-group">
     {{ Form::label('name', 'Name') }}
@@ -50,7 +50,7 @@
 
 {{ Form::close() }}
 
-        </form>
+        </div>
 
     </div>
 

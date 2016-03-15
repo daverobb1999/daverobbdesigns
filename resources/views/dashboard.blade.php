@@ -10,6 +10,9 @@
         @include('nav')
 
     </header>
+    @if (Session::has('message'))
+        <div class="alert alert-info">{{ Session::get('message') }}</div>
+    @endif
 
     <div id="main" class="row">
         @include('admin-nav')
@@ -20,9 +23,15 @@
                     <h5>name : {{$item['name']}}</h5>
                     <p>image name : {{$item['url_to_image']}}</p>
                     <p>description : {{$item['description']}}</p>
-                    <p>short description = {{$item['short_description']}}</p>
+                    <p>short description : {{$item['short_description']}}</p>
                     <p>url : {{$item['url']}}</p>
-                    <a class="btn btn-primary" href=http://localhost/drd_2/public/edit-project/{{$item['id']}}>Edit Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+                    <p class ="btn btn-primary"> {{ Html::linkAction('ProjectController@edit','Edit Project', array($item['id'])) }}<span class="glyphicon glyphicon-chevron-right"></span></p>
+
+                    {{ Form::open(array('url' => 'dashboard/' . $item['id'], 'class' => 'pull-right')) }}
+                    {{ Form::hidden('_method', 'DELETE') }}
+                    {{ Form::submit('Delete this Project', array('class' => 'btn btn-warning')) }}
+                    {{ Form::close() }}
+
                 </div>
             </div>
             <!-- /.row -->

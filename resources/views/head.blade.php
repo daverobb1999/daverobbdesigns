@@ -7,13 +7,13 @@
     <title>Dave Robb Designs</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="http://localhost/daverobbdesigns/public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://localhost/drd_2/public/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="http://localhost/daverobbdesigns/public/css/1-col-portfolio.css" rel="stylesheet">
+    <link href="http://localhost/drd_2/public/css/1-col-portfolio.css" rel="stylesheet">
 	
-	<link href="http://localhost/daverobbdesigns/public/css/style.css" rel="stylesheet">
-	
+	<link href="http://localhost/drd_2/public/css/style.css" rel="stylesheet">
+
 	
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
