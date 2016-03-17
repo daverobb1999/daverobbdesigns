@@ -29,7 +29,7 @@
 
                     {{ Form::open(array('url' => 'dashboard/' . $item['id'], 'class' => 'pull-right')) }}
                     {{ Form::hidden('_method', 'DELETE') }}
-                    {{ Form::submit('Delete this Project', array('class' => 'btn btn-warning')) }}
+                    {{ Form::submit('Delete this Project', array('class' => 'btn btn-danger')) }}
                     {{ Form::close() }}
 
                 </div>

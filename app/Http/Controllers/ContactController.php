@@ -36,11 +36,11 @@ class ContactController extends Controller {
 //email 'From' field: Get users email add and name
                 $message->from($data['email'] , $data['first_name']);
 //email 'To' field: cahnge this to emails that you want to be notified.
-                $message->to('daverobb1999@gmail.com', 'David Robb')->subject('daverobbdesigns.com message');
+                $message->to('dr@daverobbdesigns.com', 'David Robb')->subject('daverobbdesigns.com message');
 
             });
 
-            return View::make('contact');
+            return View('contact');
         }else{
 //return contact form with errors
             return Redirect::to('/contact')->withErrors($validator);

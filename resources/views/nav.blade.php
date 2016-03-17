@@ -1,4 +1,4 @@
-    <!-- Navigation -->
+<!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top " role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -23,7 +23,7 @@
                     <li>
                         <a href="{{ url('/contact') }}">Contact</a>
                     </li>
-                    @if (Auth::check())
+                    @if(Auth::check())
                     <li>
                         <a href="{{ url('/dashboard') }}">Dashboard</a>
                     </li>
