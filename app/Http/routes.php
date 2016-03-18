@@ -31,9 +31,8 @@ Route::group(['middleware' => ['web']], function (){
     //$this->get('dashboard', 'ProjectController@index');
     Route::get('dashboard', ['middleware' => 'auth', 'uses' => 'ProjectController@index']);
     Route::get('dashboard/create', ['middleware' => 'auth', 'uses' => 'ProjectController@create']);
-    Route::get('dashboard/delete', ['middleware' => 'auth', 'uses' => 'ProjectController@delete']);
-    Route::get('dashboard/store', ['middleware' => 'auth', 'uses' => 'ProjectController@store']);
-    Route::get('dashboard/update', ['middleware' => 'auth', 'uses' => 'ProjectController@update']);
+    Route::get('dashboard/edit', ['middleware' => 'auth', 'uses' => 'ProjectController@delete']);
+
     // Logging in and out
 // Authentication Routes...
     $this->get('login', 'Auth\AuthController@showLoginForm');
